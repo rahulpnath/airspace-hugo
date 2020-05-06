@@ -41,6 +41,9 @@ link = "plugins/google-map/gmap.js"
 
 ############################## widgets ###############################
 
+[params.sidebar]
+enable = true
+
 [params.widgets]
 sidebar = ["recent_posts", "taxonomy_category", "taxonomy_tags"]
 

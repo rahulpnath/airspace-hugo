@@ -1,11 +1,12 @@
 {{ define "main" }}
+{{- $sidebarEnabled := .Site.Params.sidebar.enable -}}
 
 {{ partial "page-title.html" . }}
 
 <section class="page-wrapper">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">
+			<div class={{ cond $sidebarEnabled "col-md-8" "col-md-10" }}>
 				<div class="post post-single">
 					<h2 class="post-title">{{ .Title }}</h2>
 					<div class="post-meta">

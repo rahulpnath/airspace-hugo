@@ -1,11 +1,12 @@
 {{ define "main" }}
+{{- $sidebarEnabled := .Site.Params.sidebar.enable -}}
 
 {{ partial "page-title.html" . }}
 
 <div class="page-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
+      <div class={{ cond $sidebarEnabled "col-md-8" "col-md-10" }}>
         {{ $paginator := .Paginate .Data.Pages }}
         {{ range $paginator.Pages }}
         <div class="post">
