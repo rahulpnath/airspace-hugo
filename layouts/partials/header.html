@@ -13,7 +13,11 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-              <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="img-responsive">
+              {{ if (isset .Params "logo") }}
+                 <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" class="img-responsive">
+              {{ else }}
+                <div> {{ .Site.Title }} </div>
+              {{ end }}
             </a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
